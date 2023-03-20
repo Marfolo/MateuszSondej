@@ -24,6 +24,7 @@ public class Zadanie2 {
                 case 5 -> Potega();
                 case 6 -> Pierwiastek();
                 case 7 -> FunTryg();
+                case 8 -> Close();
                 default -> Close();
             }
         }
@@ -34,13 +35,14 @@ public class Zadanie2 {
         System.out.println("----------KALKULATOR----------");
         System.out.println("------------------------------");
 
-        System.out.println("\n\t1 Suma" +
+        System.out.println("\t1 Suma" +
                 "\n\t2 Roznica" +
                 "\n\t3 Iloczyn" +
                 "\n\t4 Iloraz" +
                 "\n\t5 Potega" +
                 "\n\t6 Pierwiastek" +
-                "\n\t7 Funkcje trygonometryczne");
+                "\n\t7 Funkcje trygonometryczne" +
+                "\n\t8 Wyjdz");
 
         System.out.println("------------------------------");
     }
@@ -78,7 +80,7 @@ public class Zadanie2 {
         System.out.print("\tPodaj b: ");
         b = InputInt();
 
-        System.out.print("\n\tRoznica: " + (a - b));
+        System.out.println("\n\tRoznica: " + (a - b));
     }
 
     public static void Iloczyn() {
@@ -131,48 +133,48 @@ public class Zadanie2 {
     }
 
     public static void FunTryg() {
-        System.out.println("\n\t1 Sinus");
-        System.out.println("\n\t2 Cosinus");
-        System.out.println("\n\t3 Tangens");
+        System.out.print("\n\t1 Sinus");
+        System.out.print("\n\t2 Cosinus");
+        System.out.print("\n\t3 Tangens");
         System.out.println("\n\t4 Cotangens");
-        System.out.println("\n\tWybierz: ");
+        System.out.print("\n\tWybierz: ");
 
         int opcja = InputInt();
-        int kat_w_stopniach;
+        double kat_w_stopniach;
 
         switch (opcja) {
             case 1:
-                System.out.print("Podaj kat w stopniach: ");
+                System.out.print("\n\tPodaj kat w stopniach: ");
                 kat_w_stopniach = InputInt();
-                System.out.println("Sinus: " + Math.sin((kat_w_stopniach / 180) * Math.PI));
+                System.out.println("\n\tSinus: " + Math.sin((kat_w_stopniach / 180) * Math.PI));
                 break;
             case 2:
-                System.out.print("Podaj kat w stopniach: ");
+                System.out.print("\n\tPodaj kat w stopniach: ");
                 kat_w_stopniach = InputInt();
-                System.out.println("Cosinus: " + Math.cos((kat_w_stopniach / 180) * Math.PI));
+                System.out.println("\n\tCosinus: " + Math.cos((kat_w_stopniach / 180) * Math.PI));
                 break;
             case 3:
-                System.out.print("Podaj kat w stopniach: ");
+                System.out.print("\n\tPodaj kat w stopniach: ");
                 kat_w_stopniach = InputInt();
 
                 if (kat_w_stopniach % 90 != 0) {
-                    System.out.println("Tangens: " + Math.tan((kat_w_stopniach / 180) * Math.PI));
+                    System.out.println("\n\tTangens: " + Math.tan((kat_w_stopniach / 180) * Math.PI));
                 } else {
-                    System.out.println("Nie da sie obliczyc tangensa!");
+                    System.out.println("\n\tNie da sie obliczyc tangensa!");
                 }
 
                 break;
             case 4:
-                System.out.print("Podaj kat w stopniach: ");
+                System.out.print("\n\tPodaj kat w stopniach: ");
                 kat_w_stopniach = InputInt();
 
                 if (kat_w_stopniach % 180 != 0) {
-                    System.out.println("Cotangens: " + (1 / Math.tan((kat_w_stopniach / 180) * Math.PI)));
+                    System.out.println("\n\tCotangens: " + (1 / Math.tan((kat_w_stopniach / 180) * Math.PI)));
                 } else {
-                    System.out.println("Nie da sie obliczyc cotangensa!");
+                    System.out.println("\n\tNie da sie obliczyc cotangensa!");
                 }
             default:
-                System.out.println("Wychodze z programu!");
+                System.out.println("\n\tWychodze z programu!");
                 break;
         }
     }
@@ -184,7 +186,7 @@ public class Zadanie2 {
         option = InputString();
 
         if (option.equals("T") || option.equals("t")) {
-            break;
+            System.exit(0);
         }
     }
 }
